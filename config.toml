@@ -36,20 +36,10 @@ taxonomiesCount = true # Add taxonomies count
     #devto = ""          #Dev.to username 
 
 [params]
-    tagline = "beauty lies underneath the surface"
+    tagline = "beauty lies underneath"
     customCSS = []  #Optional Customised CSS
     disableDarkModeCSS = false # disables css style for users using dark-mode
 
-
-[params.social]
-twitter = "jjoaquim"
-github = "jjoaquim"
-email = "j.joaquim@gmail.com"
-linkedin = "jjoaquim"
-facebook = "jjoaquim"
-instagram = "jjoaquim"
-codepen = "jjoaquim"
-rss = "index.xml" # Add this to show RSS button in social.
 
 [params.social.config]
 platforms = ["github","twitter","instagram","email","linkedin"]
