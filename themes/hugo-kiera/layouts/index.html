@@ -1,0 +1,30 @@
+{{ define "main" }}
+
+<section id="home">
+  <ul>
+    {{ $pages := where site.RegularPages "Type" "posts" }}
+    {{ $paginator := .Paginate $pages }}
+    {{ range $index, $page := $paginator.Pages }}
+
+    <li class="{{if eq $index 0}}first {{end}}post">
+      {{ if .Params.external_link }}
+        <h1><a href="{{ .Params.external_link }}" title="{{ $page.Title }}" target="_blank">{{ .Title }}</a></h1>
+      {{ else }}
+        <h1><a href="{{ $page.Permalink }}" title="{{ $page.Title }}">{{ .Title }}</a></h1>
+      {{ end }}
+      {{ partial "aside" . }}
+      {{ partial "featured_image" .}}
+      <p>{{ .Summary }}</p>
+      {{ if .Params.external_link}}
+      {{ else }}
+        {{ if .Truncated }}
+        <a href="{{ .RelPermalink }}">{{ T "readMore" }}</a>
+        {{ end }}
+      {{ end }}
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ template "partials/paginator.html" . }}
+
+{{ end }}

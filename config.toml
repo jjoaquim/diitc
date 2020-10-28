@@ -1,0 +1,61 @@
+baseURL = "http://example.org/"
+languageCode = "en"
+title = "design is in the code"
+theme = "hugo-kiera"
+copyright = "&copy; José Carlos Joaquim"
+googleAnalytics = ""
+Paginate = 5 # Number of posts per page
+enableRobotsTXT = true
+
+[params.rss] # Adding this tag enables RSS feed
+includeContent = true # Includes whole content in rss
+authorName = "José Carlos Joaquim" # Author full name
+authorEmail = "j.joaquim@gmail.com" # Author email
+
+[params.assets]
+customCSS = ["css/custom.css"]
+
+[params.info]
+adsense = "" # Adsense ID (ID only, without ca-pub-)
+enableSocial = true # Adds OpenGraph and Twitter cards
+homeTitle = "" # Title for home page
+poweredby = true # Adds powered by hugo and kiss below Copyright
+related = true # Includes related articles at the bottom of the article
+codeCopy = true # Add copy button above code blocks
+taxonomiesCount = true # Add taxonomies count
+
+[author]
+    name = "José Carlos Joaquim"           #Author name
+    github = "jjoaquim"         #Github username
+    #gitlab = ""         #Gitlab username
+    linkedin = "jjoaquim"       #LinkedIn username
+    #facebook = ""       #Facebook username
+    twitter = "jjoaquim"        #Twitter username
+    instagram = "jjoaquim"      #Instagram username
+    #stackoverflow = "jjoaquim"  #StackOverflow username
+    #devto = ""          #Dev.to username 
+
+[params]
+    tagline = "beauty lies underneath the surface"
+    customCSS = []  #Optional Customised CSS
+    disableDarkModeCSS = false # disables css style for users using dark-mode
+
+
+[params.social]
+twitter = "jjoaquim"
+github = "jjoaquim"
+email = "j.joaquim@gmail.com"
+linkedin = "jjoaquim"
+facebook = "jjoaquim"
+instagram = "jjoaquim"
+codepen = "jjoaquim"
+rss = "index.xml" # Add this to show RSS button in social.
+
+[params.social.config]
+platforms = ["github","twitter","instagram","email","linkedin"]
+
+[taxonomies]
+tag ="tags"
+
+[blackfriday]
+hrefTargetBlank = true
