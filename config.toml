@@ -36,7 +36,7 @@ taxonomiesCount = true # Add taxonomies count
     #devto = ""          #Dev.to username 
 
 [params]
-    tagline = "beauty lies underneath"
+    tagline = "it's under the visible"
     customCSS = []  #Optional Customised CSS
     disableDarkModeCSS = false # disables css style for users using dark-mode
 
