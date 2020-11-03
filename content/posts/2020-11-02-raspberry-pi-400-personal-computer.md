@@ -1,7 +1,7 @@
 ---
 title: "Raspberry Pi 400"
 date: 2020-11-02T14:18:08+01:00
-draft: true
+draft: false
 external_link: https://www.raspberrypi.org/products/raspberry-pi-400/
 images: [/posts/raspberry-pi-400.jpg#float-right]
 featured_image: /posts/raspberry-pi-400.jpg
