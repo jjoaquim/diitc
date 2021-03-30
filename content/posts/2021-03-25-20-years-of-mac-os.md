@@ -8,4 +8,4 @@ draft: true
 ---
 
 After using [Classic Mac OS](https://en.wikipedia.org/wiki/Classic_Mac_OS) at school for some time, it took me several years to return to the Mac. It was then 2004 and I was happy to discover [Mac OS X 10.3 Panther](https://en.wikipedia.org/wiki/Mac_OS_X_Panther).
-It was completly new, and better. Been using it until today, and will most likely for the coming years. Some behind the back usages of other OSes, but **let him who is without sin cast the first stone**.
+It was completly new, and better. Been using it until today (not really Panther anymore), and will, for the coming years. Some behind the back usages of other OSes, but **let him who is without sin cast the first stone**.
