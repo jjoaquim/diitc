@@ -32,7 +32,7 @@ taxonomiesCount = true # Add taxonomies count
     #facebook = ""       #Facebook username
     twitter = "jjoaquim"        #Twitter username
     instagram = "jjoaquim"      #Instagram username
-    mastodon = "jjoaquim"       #Mastodon username
+    mastodon = "@jjoaquim"       #Mastodon username
     #stackoverflow = "jjoaquim"  #StackOverflow username
     #devto = ""          #Dev.to username 
 
