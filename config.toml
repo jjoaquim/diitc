@@ -3,7 +3,7 @@ languageCode = "en"
 title = "design is in the code"
 theme = "hugo-kiera"
 copyright = "&copy; José Carlos Joaquim"
-googleAnalytics = "UA-18459471-3"
+googleAnalytics =
 Paginate = 5 # Number of posts per page
 enableRobotsTXT = true
 
