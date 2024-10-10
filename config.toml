@@ -38,13 +38,10 @@ listDateFormat = '2 Jan 2006'
 [author]
 name = "José Carlos Joaquim" #Author name
 github = "jjoaquim"          #Github username
-#gitlab = ""         #Gitlab username
-linkedin = "jjoaquim" #LinkedIn username
-#facebook = ""       #Facebook username
-twitter = "jjoaquim"   #Twitter username
-instagram = "jjoaquim" #Instagram username
-mastodon = "@jjoaquim" #Mastodon username
-#devto = ""          #Dev.to username
+linkedin = "jjoaquim"        #LinkedIn username
+twitter = "jjoaquim"         #Twitter username
+instagram = "jjoaquim"       #Instagram username
+mastodon = "@jjoaquim"       #Mastodon username
 
 [params]
 #tagline = "it's under the visible"
@@ -52,6 +49,8 @@ tagline = ""
 customCSS = []             #Optional Customised CSS
 disableDarkModeCSS = false # disables css style for users using dark-mode
 enableNextPrevPages = true
+
+googleAnalytics = "G-KGWSHYCJ2K" #Google Analytics ID
 
 [params.social.config]
 platforms = ["github", "twitter", "instagram", "email", "linkedin"]

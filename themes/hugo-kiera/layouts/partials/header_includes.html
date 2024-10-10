@@ -13,7 +13,15 @@
 <script defer src="/js/katex.min.js"></script>
 <script defer src="/js/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 {{- end }}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KGWSHYCJ2K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-KGWSHYCJ2K');
+</script>
 <link rel="stylesheet" href="{{ "css/normalize.min.css" | relURL }}" />
 <link rel="stylesheet" href="{{ "css/pico.slate.min.css" | relURL }}" />
 <link rel="stylesheet" href="{{ "css/pico.colors.min.css" | relURL }}" />
