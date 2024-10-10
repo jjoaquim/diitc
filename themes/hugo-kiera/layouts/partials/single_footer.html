@@ -1,24 +1,18 @@
 {{ if not .Params.meta }}
-<section class="post-nav">
-    <ul>
-        <li>
-        {{ with .PrevInSection }}
-            <a href="{{.Permalink}}"><i class="fa fa-chevron-circle-left"></i> {{ .Title }}</a>
+<section class="pagination">
+    <span class="item previous">
+        {{ with .PrevInSection }} ←
+        <a href="{{.Permalink}}"
+            ><i class="fa fa-chevron-circle-left"></i> {{ .Title }}</a
+        >
         {{ end }}
-        </li>
-        <li>
+    </span>
+    <span class="item next">
         {{ with .NextInSection }}
-            <a href="{{.Permalink}}">{{ .Title }} <i class="fa fa-chevron-circle-right"></i> </a>
-        {{ end }}
-        </li>
-    </ul>
+        <a href="{{.Permalink}}"
+            >{{ .Title }} <i class="fa fa-chevron-circle-right"></i>
+        </a>
+        → {{ end }}
+    </span>
 </section>
-  {{ if not .Params.disableComments }}
-    {{ if .Site.Params.UtterancesRepo }}
-        {{ partial "utterances" . }}
-    {{ end }}
-    {{ if .Site.Config.Services.Disqus.Shortname }}
-        {{ partial "disqus" . }}
-    {{ end }}
-  {{ end }}
 {{ end }}

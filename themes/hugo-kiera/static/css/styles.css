@@ -143,3 +143,25 @@ footer {
     border-top: 1px solid #eee;
     font-size: 75%;
 }
+.pagination {
+    margin: 3rem 0;
+    overflow: hidden;
+    clear: both;
+}
+.pagination span {
+    font-size: 80%;
+    width: 50%;
+    display: block;
+    width: 50%;
+}
+.pagination span a {
+    padding: 1rem;
+}
+.pagination span.previous {
+    float: left;
+    text-align: left;
+}
+.pagination span.next {
+    float: right;
+    text-align: right;
+}
