@@ -1,30 +1,28 @@
 {{ define "main" }}
 
 <section id="home">
-  <ul>
-    {{ $pages := where site.RegularPages "Type" "posts" }}
-    {{ $paginator := .Paginate $pages }}
-    {{ range $index, $page := $paginator.Pages }}
+    {{ $pages := where site.RegularPages "Type" "posts" }} {{ $paginator :=
+    .Paginate $pages }} {{ range $index, $page := $paginator.Pages }}
 
-    <li class="{{if eq $index 0}}first {{end}}post">
-      {{ if .Params.external_link }}
-        <h1><a href="{{ .Params.external_link }}" title="{{ $page.Title }}" target="_blank">{{ .Title }}</a></h1>
-      {{ else }}
-        <h1><a href="{{ $page.Permalink }}" title="{{ $page.Title }}">{{ .Title }}</a></h1>
-      {{ end }}
-      {{ partial "aside" . }}
-      {{ partial "featured_image" .}}
-      <p>{{ .Summary }}</p>
-      {{ if .Params.external_link}}
-      {{ else }}
-        {{ if .Truncated }}
-        <a href="{{ .RelPermalink }}">{{ T "readMore" }}</a>
-        {{ end }}
-      {{ end }}
-    </li>
+    <div class="entry {{if eq $index 0}}first {{end}}">
+        {{ partial "aside" . }}
+        <h1 class="pico-color-slate-950">
+            <a href="{{ $page.Permalink }}" title="{{ $page.Title }}"
+                >{{ .Title }}</a
+            >
+            {{if .Params.external_link}}
+            <span class="external_link">
+                <a href="{{.Params.external_link}}">&#128279;</a>
+            </span>
+            {{end}}
+        </h1>
+        <section class="content">
+            {{ partial "featured_image" .}} {{ .Content }}
+        </section>
+        <hr class="pico-color-slate-100" />
+    </div>
     {{ end }}
-  </ul>
 </section>
-{{ template "partials/paginator.html" . }}
 
+<!-- {{ template "_internal/pagination.html" . }}  -->
 {{ end }}

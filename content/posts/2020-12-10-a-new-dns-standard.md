@@ -2,7 +2,7 @@
 title: "Oblivious DoH - a new DNS standard"
 date: 2020-12-10T00:46:49+01:00
 external_link: https://blog.cloudflare.com/oblivious-dns/
-images: [/posts/doh-a-new-dns-standard.png#float-right]
+images: [/images/posts/doh-a-new-dns-standard.png#float-right]
 quote: true
 draft: false
 ---

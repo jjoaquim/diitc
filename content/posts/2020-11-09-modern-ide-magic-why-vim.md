@@ -2,7 +2,7 @@
 title: "Modern IDEs are magic. Why are so many coders still using Vim Emacs?"
 date: 2020-11-10T01:37:28+01:00
 external_link: https://stackoverflow.blog/2020/11/09/modern-ide-vs-vim-emacs/
-images: [/posts/ide-magic-why-vim.jpg#float-right]
+images: [/images/posts/ide-magic-why-vim.jpg#float-right]
 draft: false
 ---
 

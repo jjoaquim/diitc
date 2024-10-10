@@ -2,7 +2,7 @@
 title: "20 years of macOS"
 date: 2021-03-25T00:46:49+01:00
 external_link: https://arstechnica.com/gadgets/2021/03/its-been-20-years-since-the-launch-of-mac-os-x/
-images: [/posts/macos-20-years.png#float-right]
+images: [/images/posts/macos-20-years.png]
 quote: true
 draft: false
 ---

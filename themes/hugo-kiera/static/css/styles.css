@@ -1,7 +1,145 @@
-@import url(./styles-light.css);
-@import url(./styles-dark.css) (prefers-color-scheme: dark);
+body {
+    font-family: "Roboto Slab", serif;
+    font-size: 1.11rem;
+    word-wrap: break-word;
+    -webkit-nbsp-mode: space;
+    -webkit-line-break: after-white-space;
+    line-break: after-white-space;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    position: relative;
+    height: 100%;
+    line-height: 1.5;
+}
 
-ul.pagination {
-  display: flex;
-  justify-content: space-between;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Ruda", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+h1 {
+    font-weight: 500;
+}
+.container-fluid {
+    max-width: 55rem;
+    overflow: hidden;
+    clear: both;
+    display: block;
+}
+
+figure {
+    text-align: center;
+    font-style: italic;
+    font-size: smaller;
+    text-indent: 0;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+figure.right {
+    float: right;
+    width: 30%;
+}
+
+figure.left {
+    float: left;
+    width: 30%;
+}
+
+figcaption {
+    font-size: 75%;
+}
+
+header {
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.footnotes {
+    font-size: 65%;
+}
+
+header h1 {
+    font-size: larger;
+    font-variant: small-caps;
+    font-weight: normal;
+}
+
+a {
+    color: #0e1118;
+    text-decoration: none !important;
+}
+
+h1 a:hover {
+    text-decoration: underline !important;
+}
+
+.external_link img {
+    display: block;
+    float: right;
+    margin: -0.5em -0.5em 0.5em 0.5em;
+    max-width: 320px;
+}
+
+h1.pico-color-slate-950 {
+    margin-bottom: 1em;
+}
+
+.post-metadata {
+    display: table;
+    vertical-align: middle;
+    margin-bottom: 0;
+    margin-right: auto;
+    font-size: 0.8rem;
+}
+
+.post-metadata a:hover {
+    text-decoration: underline !important;
+}
+
+.entry {
+    display: block;
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 4rem;
+    width: 100%;
+    padding-top: 0.5em;
+}
+
+.entry section {
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+
+.entry section a {
+    color: var(--pico-color-indigo-600);
+}
+
+.entry section a:hover {
+    text-decoration: underline !important;
+}
+
+.external_link {
+    vertical-align: super;
+}
+
+.external_link a {
+    font-size: 1rem;
+    padding-bottom: 0.2em;
+}
+footer {
+    margin-top: 2.5rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    font-size: 75%;
 }

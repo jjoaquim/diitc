@@ -10,9 +10,7 @@ tags:
 - plugins
 - repository
 title: Unheap - a tidy repository of jQuery plugins
-images: [/posts/unheap-a-tidy-repo-of-jquery-plugins.png#float]
+images: [/images/posts/unheap-a-tidy-repo-of-jquery-plugins.png#float]
 ---
-
-[![Unheap](/posts/unheap-a-tidy-repo-of-jquery-plugins.png#float)](http://www.unheap.com)
 
 The place to go when you need a [jQuery](http://jquery.com) plugin. The beautifull great UI/UX makes it the best of it's kind.

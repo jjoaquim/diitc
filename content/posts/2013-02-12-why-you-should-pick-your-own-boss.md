@@ -10,7 +10,7 @@ tags:
 title: Why You Should Pick Your Own Boss
 ---
 
-bq. The simple reasons why your boss matters more than you realize are:  
+> The simple reasons why your boss matters more than you realize are:
 	- A good boss in a mediocre company will protect you and support you on a daily basis.
 	- A bad boss in a good company will frustrate and demoralize you on a daily basis.
 

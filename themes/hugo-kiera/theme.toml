@@ -2,10 +2,10 @@ name = "Kiera"
 license = "MIT"
 licenselink = "https://github.com/funkydan2/hugo-kiera/blob/master/LICENSE.md"
 description = "Hugo Theme for creative and technical writing"
-homepage = "http://github.com/funkydan2/hugo-kiera"
+homepage = "https://github.com/funkydan2/hugo-kiera"
 tags = ["blog","minimal","responsive"]
 features = ["blog","disqus","google-analytics","font-awesome"]
-min_version = "0.54.0"
+min_version = "0.128.0"
 
 [author]
   name = "Daniel Saunders"

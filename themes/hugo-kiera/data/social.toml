@@ -37,13 +37,6 @@ title = "Twitter"
 icon = "fab fa-twitter"
 
 [[social_icons]]
-id = "mastodon"
-url = "https://mastodon.social/%s"
-title = "Mastodon"
-icon = "fab fa-mastodon"
-rel="me"
-
-[[social_icons]]
 id = "slack"
 url = "https://%s.slack.com/"
 title = "Slack"
@@ -156,6 +149,12 @@ id = "kaggle"
 url = "https://www.kaggle.com/%s"
 title = "kaggle"
 icon = "fab fa-kaggle"
+
+[[social_icons]]
+id = "mastodon"
+url = "https://%s"
+title = "Mastodon"
+icon = "fab fa-mastodon"
 
 [[social_icons]]
 id = "weibo"

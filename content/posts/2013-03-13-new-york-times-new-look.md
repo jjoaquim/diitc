@@ -8,10 +8,7 @@ tags:
 - media
 - redesign
 title: Introducing A New Article Design - The New York Times
-images: [/posts/ny-times-new-look-03-2013.jpg]
+images: [/images/posts/ny-times-new-look-03-2013.jpg]
 ---
-
-
-[![New York Times](/posts/ny-times-new-look-03-2013.jpg)](http://www.nytimes.com/marketing/prototype/)
 
 Looking good.

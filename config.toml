@@ -3,50 +3,61 @@ languageCode = "en"
 title = "design is in the code"
 theme = "hugo-kiera"
 copyright = "&copy; José Carlos Joaquim"
-Paginate = 5 # Number of posts per page
 enableRobotsTXT = true
 
 [params.rss] # Adding this tag enables RSS feed
-includeContent = true # Includes whole content in rss
-authorName = "José Carlos Joaquim" # Author full name
+includeContent = true               # Includes whole content in rss
+authorName = "José Carlos Joaquim"  # Author full name
 authorEmail = "j.joaquim@gmail.com" # Author email
 
 [params.assets]
 customCSS = ["css/custom.css"]
 
 [params.info]
-adsense = "" # Adsense ID (ID only, without ca-pub-)
-enableSocial = true # Adds OpenGraph and Twitter cards
-homeTitle = "" # Title for home page
-poweredby = true # Adds powered by hugo and kiss below Copyright
-related = true # Includes related articles at the bottom of the article
-codeCopy = true # Add copy button above code blocks
+adsense = ""           # Adsense ID (ID only, without ca-pub-)
+enableSocial = true    # Adds OpenGraph and Twitter cards
+homeTitle = ""         # Title for home page
+poweredby = true       # Adds powered by hugo and kiss below Copyright
+related = true         # Includes related articles at the bottom of the article
+codeCopy = true        # Add copy button above code blocks
 taxonomiesCount = true # Add taxonomies count
 
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+[goldmark]
+[goldmark.extensions.extras.abbr]
+enable = true
+
+[pagination]
+pagerSize = 10
+listSummaries = true
+listDateFormat = '2 Jan 2006'
+
 [author]
-    name = "José Carlos Joaquim"           #Author name
-    github = "jjoaquim"         #Github username
-    #gitlab = ""         #Gitlab username
-    linkedin = "jjoaquim"       #LinkedIn username
-    #facebook = ""       #Facebook username
-    twitter = "jjoaquim"        #Twitter username
-    instagram = "jjoaquim"      #Instagram username
-    mastodon = "@jjoaquim"       #Mastodon username
-    #stackoverflow = "jjoaquim"  #StackOverflow username
-    #devto = ""          #Dev.to username 
+name = "José Carlos Joaquim" #Author name
+github = "jjoaquim"          #Github username
+#gitlab = ""         #Gitlab username
+linkedin = "jjoaquim" #LinkedIn username
+#facebook = ""       #Facebook username
+twitter = "jjoaquim"   #Twitter username
+instagram = "jjoaquim" #Instagram username
+mastodon = "@jjoaquim" #Mastodon username
+#devto = ""          #Dev.to username
 
 [params]
-    #tagline = "it's under the visible"
-    tagline = ""
-    customCSS = []  #Optional Customised CSS
-    disableDarkModeCSS = false # disables css style for users using dark-mode
-
+#tagline = "it's under the visible"
+tagline = ""
+customCSS = []             #Optional Customised CSS
+disableDarkModeCSS = false # disables css style for users using dark-mode
+enableNextPrevPages = true
 
 [params.social.config]
-platforms = ["github","twitter","instagram","email","linkedin"]
+platforms = ["github", "twitter", "instagram", "email", "linkedin"]
 
 [taxonomies]
-tag ="tags"
+tag = "tags"
 
 [blackfriday]
 hrefTargetBlank = true

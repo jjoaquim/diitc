@@ -1,28 +1,26 @@
+  </div>
 </main>
     <footer>
-        <h6>{{ .Site.Copyright | markdownify }} |
-            {{ T "rendered" }} <a href="https://gohugo.io" title="Hugo">Hugo</a> |
-            <a href="{{.Site.BaseURL}}index.xml">{{ T "subscribe" }} </a></h6>
+        {{ partial "user_footer" . }}
+                <span>{{ if .Site.Copyright }}{{ .Site.Copyright | markdownify }} {{ end }}
+                    <!-- {{ T "rendered" }} | <a href="https://gohugo.io" title="Hugo">Hugo</a> | Hosted on Netlify |
+                    <a href="{{.Site.BaseURL}}index.xml">{{ T "subscribe" }} </a></h6> -->
+                </span> |
+                <span><a class="archive" href="/archive/">Archive</a></span>
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.footer }}
+                <div>
+                    <h6><a class="{{if or ($currentPage.IsMenuCurrent "footer" .) ($currentPage.HasMenuCurrent "footer" .) }}active{{end}}" href="{{ .URL | relURL }}">
+                    <i class="fa-li fa {{ .Pre }} fa-lg"></i><span>{{ .Name }}</span>
+                    </a></h6>
+                </div>
+            {{ end }}
     </footer>
 </div>
 <script src="{{ "js/scripts.js" | relURL }}"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-18459471-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-18459471-3');
-</script>
-
-<script type="text/javascript">
-  (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "3ya6mjun7f");
-</script>
+{{ if .Site.Config.Services.GoogleAnalytics }}
+  {{ template "_internal/google_analytics.html" . }}
+{{ end }}
 </body>
 
 </html>
