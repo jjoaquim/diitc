@@ -1,7 +1,7 @@
 +++
 title = "A Handy GPU Glossary by Modal"
 date = 2025-01-16T10:16:47+01:00
-images= ["/images/posts/gpu-glossary.png#float-right"]
+images= ["/images/posts/gpu-glossary.png"]
 tags = ["GPU", "AI", "Machine Learning"]
 categories = []
 external_link= "https://modal.com/gpu-glossary/readme"
