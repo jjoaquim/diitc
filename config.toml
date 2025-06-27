@@ -46,9 +46,10 @@ mastodon = "@jjoaquim"       #Mastodon username
 [params]
 #tagline = "it's under the visible"
 tagline = ""
-customCSS = []             #Optional Customised CSS
-disableDarkModeCSS = true  # disables css style for users using dark-mode
+customCSS = []                                              #Optional Customised CSS
+disableDarkModeCSS = true                                   # disables css style for users using dark-mode
 enableNextPrevPages = true
+description = "ramblings about tech, life, and other stuff"
 
 googleAnalytics = "G-KGWSHYCJ2K" #Google Analytics ID
 
