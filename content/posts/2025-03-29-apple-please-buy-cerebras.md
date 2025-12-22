@@ -1,11 +1,11 @@
-+++
-title = "Apple’s AI Crisis Isn’t Just About Siri — It’s About Strategy. Time to Buy Cerebras"
-date = 2025-03-29T11:29:19+01:00
-images = []
-tags = []
-categories = ["AI", "Apple", "Siri", "Cerebras", "Apple Intelligence"]
-draft = false
-+++
+---
+title: "Apple’s AI Crisis Isn’t Just About Siri — It’s About Strategy. Time to Buy Cerebras"
+date: 2025-03-29T11:29:19+01:00
+images: []
+tags: ["AI", "Apple", "Siri", "Cerebras", "Apple Intelligence"]
+categories: ["AI", "Apple", "Siri", "Cerebras", "Apple Intelligence"]
+draft: false
+---
 
 A growing consensus among long-time Apple watchers is that something’s broken in Cupertino.
 

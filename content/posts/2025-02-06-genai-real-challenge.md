@@ -1,11 +1,11 @@
-+++
-title = "The Real Challenge with AI Adoption: Why Companies Get Stuck"
-date = 2025-02-06T12:56:59+01:00
-images = []
-tags = ["AI", "Machine Learning", "Speed", "GenAI", "Development"]
-categories = []
-draft = false
-+++
+---
+title: "The Real Challenge with AI Adoption: Why Companies Get Stuck"
+date: 2025-02-06T12:56:59+01:00
+images: []
+tags: ["AI", "Machine Learning", "Speed", "GenAI", "Development"]
+categories: []
+draft: false
+---
 
 The promise of generative AI is clear: it can dramatically accelerate how teams work. Yet many companies, from early-stage startups to established enterprises, are struggling to capture this value. While some teams ship new features in days instead of weeks, others spend months debating which AI model to use or navigating approval processes.
 

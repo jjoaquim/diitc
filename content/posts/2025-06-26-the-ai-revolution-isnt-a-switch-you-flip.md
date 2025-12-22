@@ -1,11 +1,11 @@
-+++
-title = "The AI Revolution Isn't a Switch You Flip"
-date = 2025-06-26T18:31:43+02:00
-images = ["/images/posts/ai-revolution.png"]
-tags = []
-categories = ["AI", "Revolution", "Future", "Technology", "Enterprise"]
-draft = false
-+++
+---
+title: "The AI Revolution Isn't a Switch You Flip"
+date: 2025-06-26T18:31:43+02:00
+images: ["/images/posts/ai-revolution.png"]
+tags: ["AI", "Revolution", "Future", "Technology", "Enterprise"]
+categories: ["AI", "Revolution", "Future", "Technology", "Enterprise"]
+draft: false
+---
 
 We've all seen the headlines. "AI is taking over." "The future is now." And if you've been anywhere near a product roadmap in the past 18 months, odds are someone has scribbled "AI" into a Q3 objective and called it innovation.
 
