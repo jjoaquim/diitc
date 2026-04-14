@@ -19,7 +19,7 @@ If you're on Shopify, probably yes. Shopify has been quietly wiring up agent-rea
 
 That's the problem I've been poking at for a while. Today I'm putting out one possible approach — and opening it up for others to poke at.
 
-It's called **OCP — the Open Commerce Protocol**.
+It's called [**OCP — the Open Commerce Protocol**](https://opencommerceprotocol.org).
 
 ---
 
