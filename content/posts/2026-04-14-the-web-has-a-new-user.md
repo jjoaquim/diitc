@@ -150,9 +150,9 @@ Abstract protocols are easy to hand-wave about, so the repo ships a working exam
 - **[pet-store.opencommerceprotocol.org](https://pet-store.opencommerceprotocol.org)** — Pawsome Pets. A standalone Node.js/Express implementation with no workspace dependencies — `npm install && npm start` and you have an agent-readable store.
 - **[store.opencommerceprotocol.org](https://store.opencommerceprotocol.org)** — UrbanThread. A clothing store that walks through the full OCP shopping flow with real UI components.
 - **[browser-llm.opencommerceprotocol.org](https://browser-llm.opencommerceprotocol.org)** — an AI shopping assistant that runs entirely in the browser, no cloud API tokens. Useful for seeing what a client-side agent looks like against an OCP catalog.
-- **[analytics-dashboard.opencommerceprotocol.org](https://analytics-dashboard.opencommerceprotocol.org)** — a ready-to-run dashboard for visualising which agents are actually showing up at your store.
-- **[ocp-event-ticketing.pages.dev](https://ocp-event-ticketing.pages.dev)** — StageHop. A Next.js 15 event-ticketing store running on Cloudflare Pages, with seat tiers, 8-minute holds, and mandatory human approval on non-refundable checkout.
-- **[ocp-gift-finder-webapp.j-joaquim.workers.dev](https://ocp-gift-finder-webapp.j-joaquim.workers.dev)** — Giftly. A browser-only gift finder that fans `search_products` out across every OCP store in parallel and shows a unified ranked grid — zero backend, one HTML file served from Cloudflare Workers.
+- **[analytics.opencommerceprotocol.org](https://analytics-dashboard.opencommerceprotocol.org)** — a ready-to-run dashboard for visualising which agents are actually showing up at your store.
+- **[event-ticketing.opencommerceprotocol.org](https://event-ticketing.opencommerceprotocol.org)** — StageHop. A Next.js 15 event-ticketing store running on Cloudflare Pages, with seat tiers, 8-minute holds, and mandatory human approval on non-refundable checkout.
+- **[gift-finder.opencommerceprotocol.org](https://gift-finder.opencommerceprotocol.org)** — Giftly. A browser-only gift finder that fans `search_products` out across every OCP store in parallel and shows a unified ranked grid — zero backend, one HTML file served from Cloudflare Workers.
 
 Clone any of them, point the CLI at them, or just read the manifests. They're deliberately small so you can skim the whole thing in a single sitting.
 
