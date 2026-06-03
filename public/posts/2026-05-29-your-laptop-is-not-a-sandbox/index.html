@@ -1,0 +1,193 @@
+<!doctype html>
+
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>Your laptop is not a sandbox. Stop pretending it is. - design is in the code</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="ramblings about tech, life, and other stuff" />
+<meta name="author" content="" />
+<meta property="og:url" content="//0.0.0.0:1313/posts/2026-05-29-your-laptop-is-not-a-sandbox/">
+	<meta property="og:site_name" content="design is in the code">
+	<meta property="og:title" content="Your laptop is not a sandbox. Stop pretending it is.">
+	<meta property="og:description" content="smolduck is a data analyst in a box — one command boots a disposable microVM with DuckDB and a no-build workbench. The interesting part isn&#39;t the features; it&#39;s that the design falls straight out of the constraints.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-06-02T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-06-02T00:00:00+00:00">
+		<meta property="article:tag" content="Data">
+		<meta property="article:tag" content="DuckDB">
+		<meta property="article:tag" content="Sandbox">
+		<meta property="article:tag" content="MicroVM">
+		<meta property="article:tag" content="Design">
+		<meta property="article:tag" content="Tooling">
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Your laptop is not a sandbox. Stop pretending it is.">
+	<meta name="twitter:description" content="smolduck is a data analyst in a box — one command boots a disposable microVM with DuckDB and a no-build workbench. The interesting part isn&#39;t the features; it&#39;s that the design falls straight out of the constraints.">
+
+<meta name="generator" content="Hugo 0.162.1">
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KGWSHYCJ2K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KGWSHYCJ2K');
+</script>
+<link rel="stylesheet" href="/css/normalize.min.css" />
+<link rel="stylesheet" href="/css/pico.slate.min.css" />
+<link rel="stylesheet" href="/css/pico.colors.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Ruda:wght@400..900&display=swap"
+  rel="stylesheet">
+<link rel="icon" type="image/png" href="/images/favicon-48x48.png" sizes="48x48" />
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+<link rel="shortcut icon" href="/images/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+<link rel="manifest" href="/images/site.webmanifest" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <header>
+      <div class="container-fluid">
+        
+        <h1>
+          <a href="/">design is in the code</a>
+        </h1>
+        
+      </div>
+    </header>
+    <div class="container-fluid">
+      
+
+      <main>
+
+ <div class="entry">
+    <aside class="post-metadata">
+        <a href="//0.0.0.0:1313/posts/2026-05-29-your-laptop-is-not-a-sandbox/" class="pico-color-indigo-600">
+            <time class="post-date" datetime="2026-06-02">Jun 2, 2026</time>
+        </a>
+         ·
+        <span>5 min read</span>
+         ·
+        
+        <span>
+            <em>
+                
+                #data
+                
+                · #duckdb
+                
+                · #sandbox
+                
+                · #microvm
+                
+                · #design
+                
+                · #tooling
+                
+                · #ollama
+                
+                · #local-llm
+                
+                · #mcp
+                
+                · #agents
+                
+            </em>
+        </span>
+        
+</aside>
+
+    <h1>Your laptop is not a sandbox. Stop pretending it is.</h1>
+
+       
+  <p>You&rsquo;ve seen this movie before. A stakeholder drops a 2GB parquet in Slack at 4:55pm. You <code>pip install</code> three things, paste in code an LLM wrote, and run it against your actual machine — the one with your SSH keys and your <code>~/.aws</code>. It works. You get the number.</p>
+<p>Then weeks later you feel a small cold dread about what that notebook actually touched.</p>
+<p><strong>That&rsquo;s the trap.</strong> &ldquo;Just run it locally&rdquo; assumes your laptop is a safe place to execute untrusted code. It isn&rsquo;t. And in 2026, when half the code you run was generated by a model thirty seconds ago, that assumption went from sloppy to reckless.</p>
+<p>So I built <strong><a href="https://github.com/jjoaquim/smolduck">smolduck</a></strong>: a data analyst in a box. One command boots a disposable microVM with DuckDB and a browser workbench inside it. You analyze, you close it, the box evaporates. Your host was never touched.</p>
+<h2 id="point-it-at-a-folder">Point it at a folder</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>smolduck run ./sales
+</span></span></code></pre></div><p>Boots a <a href="https://github.com/smol-machines/smolvm">smolvm</a> microVM in a couple hundred milliseconds, mounts the folder, and opens a workbench. Every CSV, Parquet, and JSON file is already a queryable DuckDB view — no import wizard. The folder <em>is</em> the database.</p>
+<p>Write SQL, hit ⌘/Ctrl+Enter, get a typed, sortable grid with the query time in the corner:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> region, <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> n <span style="color:#66d9ef">FROM</span> customers <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">DESC</span>;
+</span></span></code></pre></div><p>Click two columns in the chart builder for a bar chart — and because a chart you can&rsquo;t reproduce is a chart you can&rsquo;t trust, <strong>copy as code</strong> drops the equivalent Python in a new cell:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df <span style="color:#f92672">=</span> sql(<span style="color:#e6db74">&#34;SELECT region, count(*) n FROM customers GROUP BY 1 ORDER BY 2 DESC&#34;</span>)
+</span></span><span style="display:flex;"><span>px<span style="color:#f92672">.</span>bar(df, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;region&#34;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;n&#34;</span>)
+</span></span></code></pre></div><p>The clicks and the code are the <em>same thing</em>. You can always cross the bridge.</p>
+<h2 id="where-does-the-generated-code-run">Where does the generated code run?</h2>
+<p>That&rsquo;s the uncomfortable question every AI data tool has to answer. In smolduck the answer is: in a subprocess, inside the VM, that I can kill.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df <span style="color:#f92672">=</span> sql(<span style="color:#e6db74">&#34;SELECT amount, tenure_days FROM orders&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> RandomForestRegressor
+</span></span><span style="display:flex;"><span>RandomForestRegressor()<span style="color:#f92672">.</span>fit(df[[<span style="color:#e6db74">&#34;tenure_days&#34;</span>]], df[<span style="color:#e6db74">&#34;amount&#34;</span>])
+</span></span><span style="display:flex;"><span>px<span style="color:#f92672">.</span>scatter(df, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tenure_days&#34;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;amount&#34;</span>, trendline<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ols&#34;</span>)
+</span></span></code></pre></div><p>The kernel shares DuckDB but lives in its own process with a wall-clock timeout — infinite loop, killed, restarted clean. And it <strong>only ever turns on inside the VM</strong>; on your host it&rsquo;s off by default and stays off. The sandbox isn&rsquo;t a feature I bolted on. It&rsquo;s the precondition for everything else.</p>
+<p>The ML runner is the same idea one rung up: pick a target and features, get baseline models scored against a dumb baseline with feature importance, every run logged to <code>experiments.jsonl</code>. <strong>The boring infrastructural work is the work.</strong></p>
+<p>Wire up a model and an &ldquo;Ask&rdquo; bar appears: ask <em>&ldquo;which region grew fastest last quarter?&rdquo;</em> and it explores the schema, writes SQL, checks it against your data, and <strong>proposes a cell</strong> — it does not run it at you. I&rsquo;m allergic to AI that auto-executes; a model that&rsquo;s confidently wrong with a <code>run()</code> button is just a faster way to be wrong.</p>
+<p>Bring your own model: an Anthropic key, or a local <strong>Ollama</strong> daemon so the analyst is as private as the rest of the box — your schema and questions never leave your machine, they just hop to a model on your own loopback. No model configured, no bar. It&rsquo;s the same posture as everything else here: the VM is offline by default and opens <em>only</em> the narrowest hole the chosen provider needs — your own <code>localhost</code> for Ollama, a single allowed host for Anthropic — so turning on the analyst doesn&rsquo;t quietly turn your sandbox into an open socket.</p>
+<h2 id="let-an-agent-drive-it">Let an agent drive it</h2>
+<p>Here&rsquo;s the payoff of putting the kernel in a box: once the whole analysis surface is sandboxed, handing it to an <em>external</em> agent is safe by construction. smolduck speaks <a href="https://modelcontextprotocol.io">MCP</a>, so Claude, Cursor, or your own agent can list sources, run SQL, execute Python, fit a model, and export a report — every bit of it landing in the same killable, host-isolated VM a human gets. The agent brings the brain; smolduck keeps the blast radius. &ldquo;Let the AI run code on my data&rdquo; stops being the scary sentence.</p>
+<h2 id="throw-it-away-get-it-back">Throw it away, get it back</h2>
+<p>Everything that isn&rsquo;t your data is a plain file in <code>.smolduck/</code> — manifest, notebooks, charts, experiments, the DuckDB store. <code>smolduck stop</code> and the VM is gone with zero processes left on your host; the next <code>smolduck run</code> rebuilds your notebooks and charts exactly. Export a notebook to one self-contained HTML file and it opens offline — no &ldquo;you had to be there.&rdquo;</p>
+<p>Where I reach for it:</p>
+<ul>
+<li><strong>The 5pm investigation</strong> — messy folder in, HTML report out, nothing installed.</li>
+<li><strong>Running code you don&rsquo;t trust</strong> — agent output, anything off the internet, with your dotfiles out of scope.</li>
+<li><strong>The reproducible handoff</strong> — hand over the folder (or the HTML); zero setup on the other side.</li>
+</ul>
+<h2 id="the-design-is-in-the-constraints">The design is in the constraints</h2>
+<p>This is a <code>designisinthecode</code> post, so the quiet part: smolduck&rsquo;s behavior is a direct readout of a few stubborn constraints.</p>
+<ul>
+<li><strong>Untrusted code only in the VM</strong> → the kernel is a killable subprocess, off on the host. The safety model <em>is</em> the architecture.</li>
+<li><strong>No build step</strong> → a pinned ESM import map and a tiny Preact UI, vendored so it runs with the network off.</li>
+<li><strong>Disposable</strong> → state is plain files, so &ldquo;throw away&rdquo; and &ldquo;reopen tomorrow&rdquo; are one code path.</li>
+<li><strong>Offline by default</strong> → the box has no network until something earns it. The analyst is the only thing that asks, so it gets exactly one hole the width of its provider — and &ldquo;use a local model&rdquo; becomes the obvious private default instead of a footnote.</li>
+<li><strong>A sandboxed tool surface</strong> → exposing it to agents over MCP needed no new safety work. The box that protects you from your own pasted code protects you from theirs.</li>
+</ul>
+<p>None of those are UI decisions. All of them are felt by the user. <strong>The design was in the code the whole time.</strong></p>
+<p><code>smolduck run ./your-data</code>. Then close the laptop without the cold dread.</p>
+<p>smolduck is open source (MIT): <strong><a href="https://github.com/jjoaquim/smolduck">https://github.com/jjoaquim/smolduck</a></strong>.</p>
+
+</div>
+ 
+<section class="pagination">
+    <span class="item previous">
+         ←
+        <a href="//0.0.0.0:1313/posts/2026-04-14-the-web-has-a-new-user/"
+            ><i class="fa fa-chevron-circle-left"></i> The Web Has a New User. It Isn&#39;t Human.</a
+        >
+        
+    </span>
+    <span class="item next">
+        
+    </span>
+</section>
+
+ 
+
+  </div>
+</main>
+    <footer>
+        
+                <span>© José Carlos Joaquim 
+                    
+                </span> |
+                <span><a class="archive" href="/archive/">Archive</a></span>
+            
+            
+    </footer>
+</div>
+<script src="/js/scripts.js"></script>
+</body>
+
+</html>
+

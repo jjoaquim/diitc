@@ -1,0 +1,274 @@
+<!doctype html>
+
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>Critical Thinking in the Age of AI - design is in the code</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="ramblings about tech, life, and other stuff" />
+<meta name="author" content="" />
+<meta property="og:url" content="//0.0.0.0:1313/posts/2025-12-22-critical-thinking-in-the-age-of-ai/">
+	<meta property="og:site_name" content="design is in the code">
+	<meta property="og:title" content="Critical Thinking in the Age of AI">
+	<meta property="og:description" content="We’re entering a weird phase of software.
+AI can generate code. AI can generate UI ideas. AI can generate confidence.
+That last one is the dangerous part.
+The failure mode isn’t “AI is useless.” The failure mode is “AI is plausible” — so teams stop doing the boring checks that keep production from catching fire.
+Engineering teams across the industry are shipping AI-generated database migrations without understanding the schema changes. Marketing teams deploy AI-written copy that confidently claims features the product doesn’t have. Support teams paste chatbot responses that solve the wrong problem entirely.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-12-22T15:43:03+01:00">
+		<meta property="article:modified_time" content="2025-12-22T15:43:03+01:00">
+		<meta property="article:tag" content="AI">
+		<meta property="article:tag" content="Development">
+		<meta property="article:tag" content="Critical Thinking">
+		<meta property="article:tag" content="Product">
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Critical Thinking in the Age of AI">
+	<meta name="twitter:description" content="We’re entering a weird phase of software.
+AI can generate code. AI can generate UI ideas. AI can generate confidence.
+That last one is the dangerous part.
+The failure mode isn’t “AI is useless.” The failure mode is “AI is plausible” — so teams stop doing the boring checks that keep production from catching fire.
+Engineering teams across the industry are shipping AI-generated database migrations without understanding the schema changes. Marketing teams deploy AI-written copy that confidently claims features the product doesn’t have. Support teams paste chatbot responses that solve the wrong problem entirely.">
+
+<meta name="generator" content="Hugo 0.162.1">
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KGWSHYCJ2K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KGWSHYCJ2K');
+</script>
+<link rel="stylesheet" href="/css/normalize.min.css" />
+<link rel="stylesheet" href="/css/pico.slate.min.css" />
+<link rel="stylesheet" href="/css/pico.colors.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Ruda:wght@400..900&display=swap"
+  rel="stylesheet">
+<link rel="icon" type="image/png" href="/images/favicon-48x48.png" sizes="48x48" />
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+<link rel="shortcut icon" href="/images/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+<link rel="manifest" href="/images/site.webmanifest" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <header>
+      <div class="container-fluid">
+        
+        <h1>
+          <a href="/">design is in the code</a>
+        </h1>
+        
+      </div>
+    </header>
+    <div class="container-fluid">
+      
+
+      <main>
+
+ <div class="entry">
+    <aside class="post-metadata">
+        <a href="//0.0.0.0:1313/posts/2025-12-22-critical-thinking-in-the-age-of-ai/" class="pico-color-indigo-600">
+            <time class="post-date" datetime="2025-12-22">Dec 22, 2025</time>
+        </a>
+         ·
+        <span>6 min read</span>
+         ·
+        
+        <span>
+            <em>
+                
+                #AI
+                
+                · #Development
+                
+                · #Critical Thinking
+                
+                · #Product
+                
+            </em>
+        </span>
+        
+</aside>
+
+    <h1>Critical Thinking in the Age of AI</h1>
+
+       
+<a
+    class="external_link"
+    href=""
+    title="Critical Thinking in the Age of AI"
+>
+    <img src="" />
+</a>
+
+  <p>We&rsquo;re entering a weird phase of software.</p>
+<p>AI can generate code.
+AI can generate UI ideas.
+AI can generate <em>confidence</em>.</p>
+<p>That last one is the dangerous part.</p>
+<p>The failure mode isn&rsquo;t &ldquo;AI is useless.&rdquo; The failure mode is &ldquo;AI is <em>plausible</em>&rdquo; — so teams stop doing the boring checks that keep production from catching fire.</p>
+<p>Engineering teams across the industry are shipping AI-generated database migrations without understanding the schema changes. Marketing teams deploy AI-written copy that confidently claims features the product doesn&rsquo;t have. Support teams paste chatbot responses that solve the wrong problem entirely.</p>
+<p>The code compiles. The tests pass. The metrics look green.</p>
+<p>Until they don&rsquo;t.</p>
+<p>Addy Osmani published something that cuts through the noise: <strong>&quot;<a href="https://addyo.substack.com/p/critical-thinking-during-the-age">Critical Thinking during the age of AI</a>.&quot;</strong> It&rsquo;s a simple framework — almost embarrassingly obvious. Which is exactly why it works.</p>
+<h2 id="the-framework-that-actually-matters">The Framework That Actually Matters</h2>
+<p>Addy structures critical thinking around six questions: <strong>Who / What / Where / When / Why / How</strong></p>
+<p>Not as philosophy. As an operating system for teams building with AI.</p>
+<p>Here&rsquo;s what that looks like when you&rsquo;re actually shipping product.</p>
+<hr>
+<h2 id="who-authority-is-not-optional">Who: Authority Is Not Optional</h2>
+<p>When an LLM generates code that looks authoritative, your brain wants to merge and move on.</p>
+<p>That&rsquo;s the trap.</p>
+<p>I&rsquo;ve seen production incidents caused by AI-suggested changes that nobody actually understood — not because the team was careless, but because the process didn&rsquo;t catch it. The code was syntactically correct. It even passed tests. But when it hit production at 2 AM, nobody knew how to debug it because nobody had <em>owned</em> the decision to ship it.</p>
+<p>Treat AI output like it came from an eager intern: useful draft, zero authority.</p>
+<p>Before you ship, answer:</p>
+<ul>
+<li>Who is accountable when this breaks?</li>
+<li>Who understands the domain enough to validate this?</li>
+<li>Who reviewed the security implications?</li>
+<li>Who will debug this at 3 AM?</li>
+</ul>
+<p>Critical thinking is a team sport. &ldquo;Who&rsquo;s in the room?&rdquo; determines whether you ship a feature or a time bomb.</p>
+<hr>
+<h2 id="what-define-the-problem-before-you-code-the-solution">What: Define the Problem Before You Code the Solution</h2>
+<p>Most AI workflows skip straight to implementation.</p>
+<p>You type: &ldquo;How do I implement X?&rdquo;</p>
+<p>And now you&rsquo;re building a solution to a problem you never validated. I&rsquo;ve watched teams spend weeks optimizing AI-generated database queries when the real problem was that nobody had explained to the AI that the data model was wrong.</p>
+<p>The better sequence:</p>
+<ul>
+<li>What is actually failing? (Not what users say. What the data shows.)</li>
+<li>What does success look like? (Specific, measurable.)</li>
+<li>What evidence supports this being the right problem?</li>
+</ul>
+<p>&ldquo;Users say it&rsquo;s slow&rdquo; is not a problem statement. It&rsquo;s a symptom.</p>
+<p>Is it slow for all users or a segment? Slow on mobile or desktop? Slow because of render time, network latency, or database queries?</p>
+<p>Define the problem with specificity or you&rsquo;ll optimize the wrong thing.</p>
+<hr>
+<h2 id="where-context-is-king-sandboxes-lie">Where: Context Is King (Sandboxes Lie)</h2>
+<p>A fix that works in a local development environment can be a production catastrophe.</p>
+<p>Real example: AI suggests using a synchronous API call because that&rsquo;s what worked in the documentation example. Ships to production. Blocks the main thread. App freezes. User churn spikes 40%.</p>
+<p>Before you ship, map the context:</p>
+<ul>
+<li>Where does this run? (Mobile device with 2GB RAM? Edge worker with 50ms timeout? Server with unlimited resources?)</li>
+<li>Where in the user journey does this fail? (New users? Power users? Specific workflows?)</li>
+<li>Where are the downstream dependencies? (What breaks if this service goes down?)</li>
+</ul>
+<p>AI is great at local solutions. Real engineering is understanding the system it lands in.</p>
+<hr>
+<h2 id="when-triage-vs-root-cause">When: Triage vs Root Cause</h2>
+<p>Under pressure, teams default to speed: restart the service, roll back the deploy, &ldquo;just ship it.&rdquo;</p>
+<p>Sometimes that&rsquo;s correct. But label it honestly: <strong>This is a band-aid. We&rsquo;re buying time.</strong></p>
+<p>The critical skill is knowing when speed matters and when rigor is non-negotiable.</p>
+<p>Triage is for production fires. Root cause analysis is for everything else.</p>
+<p>And if you do a quick fix, schedule the follow-up immediately. Otherwise, the band-aid becomes &ldquo;the architecture&rdquo;, and you&rsquo;re debugging it three years later, wondering why nobody can remember why it was built that way.</p>
+<hr>
+<h2 id="why-stop-shipping-vibes">Why: Stop Shipping Vibes</h2>
+<p>&ldquo;Why are we doing this?&rdquo; is the most underrated product question in 2025.</p>
+<p>If the answer is:</p>
+<ul>
+<li>&ldquo;Because it&rsquo;s trendy.&rdquo;</li>
+<li>&ldquo;Because our competitor did it.&rdquo;</li>
+<li>&ldquo;Because the AI suggested it.&rdquo;</li>
+</ul>
+<p>That&rsquo;s not a why. That&rsquo;s a vibe.</p>
+<p>Real example: A team ships an AI chatbot because &ldquo;everyone&rsquo;s doing AI now.&rdquo; Usage is 2%. Support tickets increase 30% because the bot can&rsquo;t escalate to humans. Six months later, they shut it down.</p>
+<p>Nobody asked: Why do users need this? What problem does it solve that humans or docs can&rsquo;t?</p>
+<p>Use the <strong>5 Whys</strong> framework when debugging failures:</p>
+<ul>
+<li>Why did the model fail? (Data quality dropped)</li>
+<li>Why did data quality drop? (Pipeline dependency broke)</li>
+<li>Why wasn&rsquo;t it caught? (No monitoring on that metric)</li>
+<li>Why is monitoring missing? (Team assumed it was covered)</li>
+<li>Why did we assume? (No ownership clarity)</li>
+</ul>
+<p>Stop fixing symptoms. Fix causes.</p>
+<hr>
+<h2 id="how-show-your-work">How: Show Your Work</h2>
+<p>The final trap: skipping justification.</p>
+<p>You paste the AI-generated solution. It compiles. Tests pass. Ship it.</p>
+<p>Six months later, someone asks: &ldquo;Why did we implement it this way?&rdquo;</p>
+<p>Nobody remembers.</p>
+<p>Critical thinking shows up in <em>how</em> you communicate:</p>
+<ul>
+<li>What&rsquo;s the proposal?</li>
+<li>What&rsquo;s the rationale?</li>
+<li>What evidence supports it?</li>
+<li>What are the trade-offs?</li>
+<li>What alternatives did we consider?</li>
+</ul>
+<p>If you can&rsquo;t explain it clearly in a pull request description, you don&rsquo;t understand it yet. And if you don&rsquo;t understand it, you can&rsquo;t maintain it.</p>
+<p>AI doesn&rsquo;t change that. It amplifies it.</p>
+<hr>
+<h2 id="the-pre-ship-checklist-that-keeps-production-stable">The Pre-Ship Checklist That Keeps Production Stable</h2>
+<p>Before you merge AI-assisted changes:</p>
+<ul>
+<li><strong>Who</strong> is accountable? Who reviewed it? Who owns debugging it?</li>
+<li><strong>What</strong> problem is this solving? Show the evidence.</li>
+<li><strong>Where</strong> could it break? Map the environments and dependencies.</li>
+<li><strong>When</strong> is this a triage fix vs root-cause work?</li>
+<li><strong>Why</strong> is this the right approach? What alternatives exist?</li>
+<li><strong>How</strong> will we validate it? What&rsquo;s the rollback plan?</li>
+</ul>
+<p>This isn&rsquo;t bureaucracy. It&rsquo;s how you maintain velocity <em>and</em> quality when your draft engine is infinite.</p>
+<hr>
+<h2 id="the-real-competitive-advantage">The Real Competitive Advantage</h2>
+<p>AI makes it easy to <em>look</em> productive.</p>
+<p>Critical thinking is what keeps you <em>effective</em>.</p>
+<p>The teams that win in the next few years won&rsquo;t be the ones that &ldquo;use AI the most.&rdquo; They&rsquo;ll be the ones who keep their judgment intact while using it.</p>
+<p>Because when everyone can generate infinite code, the differentiator is knowing what <em>not</em> to ship.</p>
+<hr>
+<p><strong>Further Reading</strong></p>
+<ul>
+<li>Addy Osmani — &ldquo;<a href="https://addyo.substack.com/p/critical-thinking-during-the-age">Critical Thinking during the age of AI</a>&rdquo;</li>
+</ul>
+
+</div>
+ 
+<section class="pagination">
+    <span class="item previous">
+         ←
+        <a href="//0.0.0.0:1313/posts/2025-06-26-the-ai-revolution-isnt-a-switch-you-flip/"
+            ><i class="fa fa-chevron-circle-left"></i> The AI Revolution Isn&#39;t a Switch You Flip</a
+        >
+        
+    </span>
+    <span class="item next">
+        
+        <a href="//0.0.0.0:1313/posts/2026-04-14-the-web-has-a-new-user/"
+            >The Web Has a New User. It Isn&#39;t Human. <i class="fa fa-chevron-circle-right"></i>
+        </a>
+        → 
+    </span>
+</section>
+
+ 
+
+  </div>
+</main>
+    <footer>
+        
+                <span>© José Carlos Joaquim 
+                    
+                </span> |
+                <span><a class="archive" href="/archive/">Archive</a></span>
+            
+            
+    </footer>
+</div>
+<script src="/js/scripts.js"></script>
+</body>
+
+</html>
+
